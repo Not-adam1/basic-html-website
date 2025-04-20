@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      function validateInputs() {
+        const email = document.querySelector('input[type="email"]').value;
+        const password = document.querySelector('input[type="password"]').value;
+        const nextButton = document.querySelector('button');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        nextButton.disabled = !(email && password && emailPattern.test(email));
+      }
+    </script>
+  </head>
+  <body>
+    <form class="ininbu">
+    <input class="inputs" type="email" placeholder="E-mail" oninput="validateInputs()"/><br>
+    <input class="inputs" type="password" placeholder="Password" oninput="validateInputs()"/><br>
+    <button onclick="window.location.href='thx.html'" disabled class="nbutton">Next</button>
+    </form>
+    <h4>We recommend to use a <strong>strong</strong> password.<br> A strong password includes:<br>
+    •1 uppercase and downercase letter<br>
+    •Has at least 8 characters<br>
+    •Has 1 or more special characters and a number<br>
+    </h4>
+  </body>
+</html>
